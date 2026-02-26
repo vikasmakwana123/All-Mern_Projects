@@ -1,0 +1,65 @@
+@import "tailwindcss";
+/* Hide scrollbar for Chrome, Safari, and Opera */
+/* Hide scrollbar for Chrome, Safari, and Opera */
+/* Apply background grain correctly */
+#MusicPlayer {
+  position: relative;          /* Needed for pseudo-element positioning */
+  z-index: 1;
+  overflow: hidden;            /* Ensures pseudo-element stays contained */
+}
+
+#MusicPlayer::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url("https://cdn1.vectorstock.com/i/1000x1000/90/15/background-with-grain-texture-vector-12179015.jpg");
+  background-repeat: repeat;
+  opacity: 0.02;                /* ✅ Only the grain texture fades */
+  animation: grainMove 120s linear infinite;
+  pointer-events: none;        /* Prevent blocking clicks */
+}
+
+@keyframes grainMove {
+  0%   { background-position: 0% 0%; }
+  50%  { background-position: 50% 50%; }
+  100% { background-position: 0% 0%; }
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge, and Firefox */
+html, body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+  overflow-y: scroll;        /* Keep vertical scrolling enabled */
+}
+
+
+
+/* Custom scrollbar with only thumb visible */
+.only-thumb::-webkit-scrollbar {
+  width: 8px;               /* Width of scrollbar */
+  height: 8px;              /* For horizontal scrollbars */
+}
+
+.only-thumb::-webkit-scrollbar-track {
+  background: transparent;   /* Hide track */
+}
+
+.only-thumb::-webkit-scrollbar-thumb {
+  background: #4b5563;       /* Dark gray thumb */
+  border-radius: 10px;
+}
+
+.only-thumb::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;       /* Lighter gray on hover */
+}
+
+/* Firefox support */
+.only-thumb {
+  scrollbar-width: thin;     
+  scrollbar-color: #4b5563 transparent; /* thumb visible, track transparent */
+}
