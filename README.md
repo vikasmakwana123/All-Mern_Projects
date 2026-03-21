@@ -3,7 +3,7 @@
 Here are some of my hosted projects with their GitHub repositories:
 
 1. **[Personal Portfolio](https://github.com/vikasmakwana123/All-Mern_Projects/blob/main/Personal_Portfolio)**
-   Demo link:-www.vikasmakwana.netlify.app
+   Demo link:-https://vikasmakwana.netlify.app
    - A showcase of my skills, projects, and achievements.
 
 3. **[Gym Management](https://github.com/vikasmakwana123/Gym_Mangement)**
